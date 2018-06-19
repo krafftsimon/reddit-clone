@@ -1,24 +1,47 @@
 import React, { Component } from 'react';
 
 import './app.scss';
-import react from './assets/react.svg';
-import redux from './assets/redux.svg';
-import webpack from './assets/webpack.svg';
-import babel from './assets/babel.svg';
+import Post from './components/post/post';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      posts: [
+        {
+          title: "asd",
+          createdAt: "monday",
+          author: "john",
+          commentsCount: "400",
+        },
+        {
+          title: "asd",
+          createdAt: "monday",
+          author: "john",
+          commentsCount: "400",
+        },
+        {
+          title: "asd",
+          createdAt: "monday",
+          author: "john",
+          commentsCount: "400",
+        },
+        {
+          title: "asd",
+          createdAt: "monday",
+          author: "john",
+          commentsCount: "400",
+        },
+      ],
+    };
+  }
+
   render() {
     return (
-      <div className="page">
-        <div className="container">
-          <h1>Welcome to React / Redux Boilerplate App.</h1>
-          <div className="logos-container">
-            <img alt="react" src={react} />
-            <img alt="redux" src={redux} />
-            <img alt="webpack" src={webpack} />
-            <img alt="babel" src={babel} />
-          </div>
-        </div>
+      <div className="global-page">
+        {this.state.posts.map(post => (
+          <Post post={post} />
+        ))}
       </div>
     );
   }

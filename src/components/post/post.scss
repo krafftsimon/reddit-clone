@@ -1,0 +1,75 @@
+.post {
+  display: flex;
+  margin: 20px;
+  background-color: #21212d;
+}
+
+.votes {
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid grey;
+  text-align: center;
+  color: #00a6c4;
+}
+
+.upvote {
+  color: #62a861;
+}
+
+.downvote {
+  color: #d34545;
+}
+
+.downvote, .upvote {
+  padding: 5px 10px;
+  transition: background-color 0.2s;
+}
+
+.downvote:hover, .upvote:hover {
+  background-color: #151521;
+  cursor: pointer;
+}
+
+.post-score {
+  font-size: 20px;
+  margin: 5px 0;
+  color: white;
+}
+
+.post-thumbnail {
+  img {
+    width: 120px;
+    display: block;
+  }
+}
+.post-details {
+  padding: 10px 10px 10px 0;
+
+  h3 {
+  color: #e0e0e0;
+  margin: 0 0 10px 0;
+  font-size: 26px;
+  padding: 0 0 0 10px;
+  cursor: pointer;
+  }
+}
+
+.submission-details {
+  color: #a5a5a5;
+  padding: 5px 10px;
+}
+
+.post-links {
+  color: #a5a5a5;
+  padding: 5px 0 5px 2px;
+
+  span {
+    cursor: pointer;
+    padding: 8px;
+    transition: background-color 0.2s;
+  }
+
+  span:hover {
+    background-color: #151521;
+  }
+}
