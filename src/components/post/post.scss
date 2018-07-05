@@ -1,67 +1,77 @@
 .post {
   display: flex;
-  margin: 20px;
-  background-color: #21212d;
+  margin: 20px 30px;
+  background: #171147;
+  transition: transform 0.2s;
+  border-radius: 10px;
+
+  &:hover {
+    background: #1e1751;
+    transform: translateX(10px);
+  }
 }
 
-.votes {
+.post__votes-container {
   display: flex;
   flex-direction: column;
-  border-right: 1px solid grey;
+  border-right: 1px solid #172b56;
   text-align: center;
-  color: #00a6c4;
 }
 
-.upvote {
+.post__upvote {
   color: #62a861;
-}
-
-.downvote {
-  color: #d34545;
-}
-
-.downvote, .upvote {
   padding: 5px 10px;
   transition: background-color 0.2s;
+
+  &:hover {
+    background-color: #151521;
+    cursor: pointer;
+  }
 }
 
-.downvote:hover, .upvote:hover {
-  background-color: #151521;
-  cursor: pointer;
+.post__downvote {
+  color: #d34545;
+  padding: 5px 10px;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: #151521;
+    cursor: pointer;
+  }
 }
 
-.post-score {
+.post__score {
   font-size: 20px;
   margin: 5px 0;
   color: white;
 }
 
-.post-thumbnail {
+.post__thumbnail {
   img {
     width: 120px;
     display: block;
   }
 }
-.post-details {
+
+.post__details {
   padding: 10px 10px 10px 0;
 
   h3 {
   color: #e0e0e0;
-  margin: 0 0 10px 0;
+  margin: 0 0 10px 10px;
   font-size: 26px;
-  padding: 0 0 0 10px;
   cursor: pointer;
   }
 }
 
-.submission-details {
+.post__submission-details {
   color: #a5a5a5;
-  padding: 5px 10px;
+  margin: 10px;
 }
 
-.post-links {
+.post__links {
   color: #a5a5a5;
-  padding: 5px 0 5px 2px;
+  margin: 10px 0;
 
   span {
     cursor: pointer;

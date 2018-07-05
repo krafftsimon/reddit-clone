@@ -1,36 +1,5 @@
 body {
   margin: 0;
   min-height: 100vh;
-  background: linear-gradient(45deg, #151521, #1c1c2b);
-}
-
-.page {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  background: radial-gradient(circle at center, #e8e8e8, #b7b7b7);
-  justify-content: center;
-}
-
-.container {
-  margin: 0 20px;
-  text-align: center;
-  border-radius: 10px;
-  box-shadow: 0 0 200px -40px rgba(0, 0, 0, 1);
-  background: white;
-  padding: 30px;
-  flex-shrink: 1;
-}
-
-.logos-container {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.logos-container img {
-  height: 150px;
-  margin: 20px;
-  flex-shrink: 1;
+  background: #080330;
 }

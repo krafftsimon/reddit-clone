@@ -7,24 +7,24 @@ import TiArrowUpThick from 'react-icons/lib/ti/arrow-up-thick';
 
 const Post = props => (
   <div className="post">
-    <div className="votes">
-      <div className="upvote">
+    <div className="post__votes-container">
+      <div className="post__upvote">
         <TiArrowUpThick size={35} />
       </div>
-      <div className="post-score">
+      <div className="post__score">
         9999
       </div>
-      <div className="downvote">
+      <div className="post__downvote">
         <TiArrowDownThick size={35}/>
       </div>
     </div>
-    <div className="post-thumbnail">
+    <div className="post__thumbnail">
       <img src={placeholder} />
     </div>
-    <div className="post-details">
+    <div className="post__details">
       <h3>{props.post.title}</h3>
-      <div className="submission-details">Submitted <span>{props.post.createdAt}</span> by <span>{props.post.author}</span>.</div>
-      <div className="post-links">
+      <div className="post__submission-details">Submitted <span>{props.post.createdAt}</span> by <span>{props.post.author}</span>.</div>
+      <div className="post__links">
         <span>{props.post.commentsCount} comments</span>
         <span>share</span>
         <span>save</span>

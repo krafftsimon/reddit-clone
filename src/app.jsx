@@ -9,25 +9,25 @@ class App extends Component {
     this.state = {
       posts: [
         {
-          title: "asd",
+          title: "aasdfda sdf sdf asdf assd",
           createdAt: "monday",
           author: "john",
           commentsCount: "400",
         },
         {
-          title: "asd",
+          title: "asdasdfda sdf sdf asdf as",
           createdAt: "monday",
           author: "john",
           commentsCount: "400",
         },
         {
-          title: "asd",
+          title: "asdfda sdf sdf asdf as",
           createdAt: "monday",
           author: "john",
           commentsCount: "400",
         },
         {
-          title: "asd",
+          title: "asasdfda sdf sdf asdf asd",
           createdAt: "monday",
           author: "john",
           commentsCount: "400",
