@@ -1,13 +1,14 @@
 const express = require('express');
+const bodyParser = require('body-parser');
 const db = require('../db');
 
 const router = express.Router();
-
+const urlencodedParser = bodyParser.urlencoded({extended: false});
 
 router.get('/posts/new', (req, res) => {
   db.query('SELECT * FROM posts ORDER BY created_at ASC')
     .then(result => {
-      res.send(result.rows);
+      res.status(200).send(result.rows);
     })
     .catch(err => {
       console.log(err);
@@ -17,7 +18,7 @@ router.get('/posts/new', (req, res) => {
 router.get('/posts/top', (req, res) => {
   db.query('SELECT * FROM posts ORDER BY score DESC')
     .then(result => {
-      res.send(result.rows);
+      res.status(200).send(result.rows);
     })
     .catch(err => {
       console.log(err);
@@ -34,8 +35,15 @@ router.delete('/posts/:postId', (req, res) => {
     })
 })
 
-router.post('/posts', (req, res) => {
-  res.send('fetching posts');
+router.post('/posts', urlencodedParser, (req, res) => {
+  const {title, contentType, content} = req.body;
+  db.query('INSERT into posts(title, created_at, content_type, content) VALUES ($1, localtimestamp, $2, $3)', [title, contentType, content])
+    .then(result => {
+      res.status(200).send('Post sucessfully created!');
+    })
+    .catch(err => {
+      console.log(err);
+    })
 })
 
 router.get('/posts/insert', (req, res) => {
