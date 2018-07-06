@@ -37,6 +37,7 @@ class App extends Component {
   }
 
   render() {
+    console.log(APIURL);
     return (
       <div className="global-page">
         {this.state.posts.map(post => (

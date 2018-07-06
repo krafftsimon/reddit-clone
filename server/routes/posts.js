@@ -12,7 +12,7 @@ router.get('/posts/new', (req, res) => {
     })
     .catch(err => {
       console.log(err);
-    })
+    });
 })
 
 router.get('/posts/top', (req, res) => {
@@ -22,7 +22,7 @@ router.get('/posts/top', (req, res) => {
     })
     .catch(err => {
       console.log(err);
-    })
+    });
 })
 
 router.delete('/posts/:postId', (req, res) => {
@@ -32,7 +32,7 @@ router.delete('/posts/:postId', (req, res) => {
     })
     .catch(err => {
       console.log(err);
-    })
+    });
 })
 
 router.post('/posts', urlencodedParser, (req, res) => {
@@ -43,7 +43,7 @@ router.post('/posts', urlencodedParser, (req, res) => {
     })
     .catch(err => {
       console.log(err);
-    })
+    });
 })
 
 router.get('/posts/insert', (req, res) => {
@@ -87,7 +87,7 @@ router.get('/posts/insert', (req, res) => {
     })
     .catch(err => {
       console.log(err);
-    })
+    });
 })
 
 module.exports = router;

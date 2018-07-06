@@ -2,6 +2,11 @@ const merge = require('webpack-merge');
 const common = require('./webpack.common.js');
 const webpack = require('webpack');
 
+const DefinePluginConfig = new webpack.DefinePlugin({
+  'process.env.NODE_ENV': JSON.stringify('development'),
+  APIURL: JSON.stringify('http://localhost:3000/api'),
+})
+
 module.exports = merge(common, {
   mode: 'development',
   devtool: 'eval-source-map',
@@ -29,6 +34,7 @@ module.exports = merge(common, {
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NamedModulesPlugin()
+    new webpack.NamedModulesPlugin(),
+    DefinePluginConfig
   ],
 })

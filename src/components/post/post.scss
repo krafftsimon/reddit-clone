@@ -1,13 +1,18 @@
 .post {
   display: flex;
-  margin: 20px 30px;
-  background: #171147;
+  margin: 0 30px;
+  background: linear-gradient(#201859, #181a59);
   transition: transform 0.2s;
-  border-radius: 10px;
+  border: 1px solid #2835a8;
+  border-bottom: none;
 
   &:hover {
     background: #1e1751;
     transform: translateX(10px);
+  }
+
+  &:last-child {
+    border: 1px solid #2835a8;
   }
 }
 
