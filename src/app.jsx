@@ -1,49 +1,28 @@
 import React, { Component } from 'react';
+import { BrowserRouter, Route, Switch, Link } from 'react-router-dom';
 
 import './app.scss';
-import Post from './components/post/post';
+import PostList from './containers/post-list';
 
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      posts: [
-        {
-          title: "aasdfda sdf sdf asdf assd",
-          createdAt: "monday",
-          author: "john",
-          commentsCount: "400",
-        },
-        {
-          title: "asdasdfda sdf sdf asdf as",
-          createdAt: "monday",
-          author: "john",
-          commentsCount: "400",
-        },
-        {
-          title: "asdfda sdf sdf asdf as",
-          createdAt: "monday",
-          author: "john",
-          commentsCount: "400",
-        },
-        {
-          title: "asasdfda sdf sdf asdf asd",
-          createdAt: "monday",
-          author: "john",
-          commentsCount: "400",
-        },
-      ],
-    };
+    this.state = {};
   }
 
   render() {
-    console.log(APIURL);
     return (
-      <div className="global-page">
-        {this.state.posts.map(post => (
-          <Post post={post} />
-        ))}
-      </div>
+      <BrowserRouter>
+        <div>
+          <header>
+            <Link to="/top">top</Link>
+            <Link to="/new">new</Link>
+          </header>
+          <Switch>
+            <Route path="/:sortCriterium(top|new)" component={PostList} />  
+          </Switch>
+        </div>
+      </BrowserRouter>
     );
   }
 }

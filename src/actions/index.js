@@ -10,6 +10,19 @@ export function fetchPostsSuccess(data) {
     payload: data,
   }
 }
+
+export function fetchPostsLoading() {
+  return {
+    type: FETCH_POSTS_LOADING,
+  }
+}
+
+export function fetchPostsError() {
+  return {
+    type: FETCH_POSTS_ERROR,
+  }
+}
+
 export function fetchPosts(sortingCriterion) {
   const url = `${APIURL}/posts/${sortingCriterion}`
   return dispatch => {
@@ -19,7 +32,7 @@ export function fetchPosts(sortingCriterion) {
         dispatch(fetchPostsSuccess(res.data));
       })
       .catch(err => {
-        dispatch(FETCH_POSTS_ERROR(err));
+        dispatch(fetchPostsLoading(err));
       });
   };
 }
